@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: table and chair scene draft 1.ma
-//Last modified: Fri, Jan 16, 2026 07:35:36 PM
+//Last modified: Fri, Jan 16, 2026 08:09:12 PM
 //Codeset: 1252
 requires maya "2026";
 currentUnit -l centimeter -a degree -t film;
@@ -9,18 +9,18 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "95CFB2C8-4C1B-0EFB-3A36-0494126C7E15";
+fileInfo "UUID" "FA989080-406F-C566-23A1-418ACE4B3CA5";
 createNode transform -s -n "persp";
 	rename -uid "FA7A9AFE-46C0-714D-DB5E-E88CDE515B1B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 27.716926177288869 12.263541170902664 6.887528682037094 ;
-	setAttr ".r" -type "double3" -377.99999999183314 1518.3999999997384 -7.9087615966648176e-15 ;
+	setAttr ".t" -type "double3" 22.229514147212193 10.815429664022199 5.6199707523956759 ;
+	setAttr ".r" -type "double3" -382.79999999184025 1515.1999999997324 6.2254991179120272e-15 ;
 	setAttr ".rpt" -type "double3" -2.1897700623848064e-14 1.05317178361833e-14 -2.2673746640727119e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "91C511D8-49E6-D7CB-E2E5-EEB25FD66824";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 29.833180500330101;
+	setAttr ".coi" 23.937295587219165;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -227,20 +227,20 @@ createNode mesh -n "pasted__chairShape" -p "pasted__chair";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "730D63F9-455D-70AA-0BA7-E68F0618AF8B";
+	rename -uid "1767DFB5-421A-5814-85D1-E6AD43B6ACB7";
 	setAttr -s 17 ".lnk";
 	setAttr -s 17 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DCF46ED8-4FE2-3F57-9E9A-FBA8FCBFF7A0";
+	rename -uid "979D8B3D-48B7-D897-D5EB-8AB7B11C8535";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "6B26026A-4ED1-0F4C-7BE7-A9BDB4B68742";
+	rename -uid "1BF48E77-442C-19C9-0CB2-6BA0284D017A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B06F65F1-4BF8-0EDF-B0B7-C59AF16E1F3E";
+	rename -uid "2E696D4A-42EF-4F84-DC59-0E9B09C78101";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "0DB5F634-41DA-D18C-AA53-27827A652B5C";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5FF8B59E-4E66-877C-EB78-489370B6BA10";
+	rename -uid "21D0F029-48A6-6EDC-4B41-2D8699E7B618";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B5CBEC66-402C-3A24-58C9-859274DCD2D8";
 	setAttr ".g" yes;
@@ -878,8 +878,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyExtrudeFace2.out" "chairShape.i";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
